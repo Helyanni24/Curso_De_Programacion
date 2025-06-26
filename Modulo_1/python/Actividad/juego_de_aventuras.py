@@ -5,9 +5,9 @@ def iniciar_juego():
     
     eleccion1 = input("Escribe 'fosforo' o 'linterna': ").strip().lower()
 
-    if eleccion1 == "FOSFORO":
+    if eleccion1 == "fosforo":
         escena_fosforo()
-    elif eleccion1 == "LINTERNA":
+    elif eleccion1 == "linterna":
         escena_linterna()
     else:
         print("Opción no válida. Por favor, elige 'fosforo' o 'linterna'.")
@@ -17,7 +17,7 @@ def escena_fosforo():
     print("Coges el fósforo y lo enciendes. Por un instante, el bosque se ilumina y ves un gran oso salvaje.")
     print("El fósforo se apaga rápidamente. ¿Qué haces?")
     
-    eleccion2 = input("Escribe 'CORRER' o 'ESCONDERTE': ").strip().lower()
+    eleccion2 = input("Escribe 'correr' o 'esconderte': ").strip().lower()
 
     if eleccion2 == "correr":
         print("Corres tan rápido como puedes, pero el oso te persigue. Te escapas a un claro y encuentras un lago.")
@@ -33,7 +33,7 @@ def escena_linterna():
     print("Coges la linterna y la enciendes. El camino se ilumina frente a ti, pero escuchas un ruido a tu lado.")
     print("¿Qué haces?")
     
-    eleccion3 = input("Escribe 'SEGUIR' el camino o 'BUSCAR' en los árboles: ").strip().lower()
+    eleccion3 = input("Escribe 'seguir' el camino o 'buscar' en los árboles: ").strip().lower()
 
     if eleccion3 == "seguir":
         print("Sigues el camino y llegas a una cueva misteriosa. Dentro, encuentras un tesoro escondido.")
@@ -48,7 +48,7 @@ def escena_linterna():
 def escena_lago():
     print("En el lago, ves un bote pequeño. ¿Qué decides hacer?")
     
-    eleccion4 = input("Escribe 'NAVEGAR' en el bote o 'REGRESAR' al bosque: ").strip().lower()
+    eleccion4 = input("Escribe 'navegar' en el bote o 'regresar' al bosque: ").strip().lower()
 
     if eleccion4 == "navegar":
         print("Navegas por el lago y encuentras una isla mágica llena de flores brillantes. ¡Has encontrado un nuevo hogar!")
@@ -61,7 +61,7 @@ def escena_lago():
 def escena_perdido():
     print("Estás perdido en el bosque y comienzas a sentirte asustado. De repente, encuentras un camino iluminado.")
     
-    eleccion5 = input("Escribe 'SEGUIR' el camino iluminado o 'GRITAR' por ayuda: ").strip().lower()
+    eleccion5 = input("Escribe 'seguir' el camino iluminado o 'gritar' por ayuda: ").strip().lower()
 
     if eleccion5 == "seguir":
         print("Sigues el camino y llegas a un pueblo donde todos te reciben con alegría. ¡Estás a salvo!")
@@ -74,7 +74,7 @@ def escena_perdido():
 def escena_tesoro():
     print("Has encontrado un tesoro lleno de oro y joyas. ¿Qué haces?")
     
-    eleccion6 = input("Escribe 'TOMAR' el tesoro o 'COMPARTIR' con el pueblo: ").strip().lower()
+    eleccion6 = input("Escribe 'tomar' el tesoro o 'compartir' con el pueblo: ").strip().lower()
 
     if eleccion6 == "tomar":
         print("Tomar el tesoro te hace rico, pero pierdes la amistad de tus vecinos.")
@@ -86,7 +86,7 @@ def escena_tesoro():
 
 def escena_deseo():
     print("La criatura mágica te ofrece un deseo. ¿Qué deseas?")
-    eleccion7 = input("Escribe 'RIQUEZA' o 'SABIDURIA': ").strip().lower()
+    eleccion7 = input("Escribe 'riqueza' o 'sabiduria': ").strip().lower()
 
     if eleccion7 == "riqueza":
         print("Deseas riqueza y te conviertes en la persona más rica del reino, pero te sientes solo.")
