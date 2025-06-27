@@ -17,5 +17,6 @@ def calcular_area_circulo(radio):
 
 # Llamada a la función calcular_area_circulo
 area_circulo = calcular_area_circulo(5)  # Calcula el área de un círculo con radio 5
-print(f"El área del círculo con radio 5 es: {area_circulo}")  # Imprime: El área del círculo con radio 5 es: 78.53981633974483
+print(f"El área del círculo con radio 5 es: {area_circulo}") 
+#Imprime: El área del círculo con radio 5 es: 78.53981633974483
 
