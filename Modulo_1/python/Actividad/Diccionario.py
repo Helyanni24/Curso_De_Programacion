@@ -1,3 +1,4 @@
+#diccionario
 dicc = {
     "Ariangelina Rincon": 15,
     "Brian Mendez": 10,
@@ -39,8 +40,3 @@ dicc["Yuliexy Dimas"]= 21
 print("\nLista Modificada de los Estudiantes y sus Edades.")
 for nombre, edad in dicc.items():
  print(f"\nNombre: {nombre}, Edad: {edad}")  
-
-
-
-
-
