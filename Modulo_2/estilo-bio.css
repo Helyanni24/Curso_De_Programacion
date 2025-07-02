@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif; /* Fuente para el cuerpo */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin: 0; /* Elimina el margen por defecto */
+    padding: 0; /* Elimina el padding por defecto */
+    background-color: #f9f9f9; /* Color de fondo de la página */
+}
+
+header {
+    background-color: #4CAF50; /* Color de fondo del header */
+    color: white; /* Color del texto del header */
+    padding: 20px; /* Espaciado interno del header */
+    text-align: center; /* Centra el texto del header */
+}
+
+main {
+    padding: 20px; /* Espaciado interno del main */
+}
+
+.sobre-mi, .mis-hobbies {
+    background-color: white; /* Fondo blanco para las secciones */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    margin-bottom: 20px; /* Margen inferior entre secciones */
+    padding: 15px; /* Espaciado interno de las secciones */
+}
+
+.foto-perfil {
+    border-radius: 50%; /* Hace la imagen redonda */
+    width: 150px; /* Ancho fijo para la imagen */
+    height: 150px; /* Alto fijo para la imagen */
+    display: block; /* Asegura que la imagen esté en bloque */
+    margin: 10px auto; /* Centra la imagen horizontalmente */
+}
+
+footer {
+    text-align: center; /* Centra el texto del footer */
+    padding: 20px; /* Espaciado interno del footer */
+    background-color: #333; /* Color de fondo del footer */
+    color: white; /* Color del texto del footer */
+}
+
+.redes-sociales {
+    list-style-type: none; /* Elimina los puntos de la lista */
+    padding: 0; /* Elimina el padding de la lista */
+}
+
+.redes-sociales li {
+    display: inline; /* Muestra los enlaces en línea */
+    margin-right: 15px; /* Margen a la derecha entre enlaces */
+}
+
+.redes-sociales a {
+    color: white; /* Color de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+}
+
+.redes-sociales a:hover {
+    text-decoration: underline; /* Subraya el enlace al pasar el mouse */
+}
