@@ -19,3 +19,8 @@ menuBtn.addEventListener("click", (e) => {
         navLinks.classList.add("open");
     }
 });
+
+navLinks.addEventListener("click", (e) => {
+    navLinks.classList.remove("open");
+    menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
