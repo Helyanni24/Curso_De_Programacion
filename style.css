@@ -133,6 +133,7 @@ body{
     height: 100vh;
 }
 
+
 .header::before {
     position: absolute;
     content: "";
@@ -233,26 +234,27 @@ nav{
     display: none;
 }
 
-@media (width > 768){
-    .nav__logo{
-        flex: 1;
+@media (min-width: 768px) {
+    .nav__logo {
+      flex: 1;
     }
-
+  
     .nav__links {
-        position: static;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-        background-color: transparent;
+      position: static;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      background-color: transparent;
     }
-
-    .nav__menu__btn{
-        display: none;
+  
+    .nav__menu__btn {
+      display: none;
     }
-
-    .nav__action__btn{
-        justify-content: flex-end;
-        display: flex;
-        flex: 1;
+  
+    .nav__action__btn {
+      justify-content: flex-end;
+      display: flex;
+      flex: 1;
     }
-}
+  }
+  
