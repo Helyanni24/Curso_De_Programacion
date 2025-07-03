@@ -35,7 +35,6 @@ def main():
                 print(f"El elemento '{elemento}' no se encuentra en la cesta.")
         
         elif opcion == '4':
-            # Para simplificar, supongamos que cada elemento tiene un precio fijo.
             precios = {
                 "manzana": 0.5,
                 "banana": 0.3,
