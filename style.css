@@ -166,10 +166,10 @@ nav{
     justify-content: space-between;
 }
 
-.nav__links {
+.nav__links{
     position: absolute;
-    left: 1rem; /* Coloca el menú a la izquierda */
-    top: 60px; /* Ajusta la altura desde la parte superior del header */
+    right: 1rem;
+    top: 68px;
     width: calc(100% - 2rem);
     max-width: 350px;
     padding: 2rem;
@@ -177,13 +177,11 @@ nav{
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    background-color: rgba(10, 30, 39, 0.8);
+    background-color: rgba(10 , 30, 39, 0.8);
     border-radius: 10px;
-    display: none; /* Ocultar por defecto */
-    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+    display: none;
+    z-index: 10;
 }
-
-
 
 .nav__links.open {
     display: flex;
