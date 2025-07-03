@@ -166,10 +166,10 @@ nav{
     justify-content: space-between;
 }
 
-.nav__links{
+.nav__links {
     position: absolute;
-    right: 1rem;
-    top: 68px;
+    left: 1rem; /* Coloca el menú a la izquierda */
+    top: 60px; /* Ajusta la altura desde la parte superior del header */
     width: calc(100% - 2rem);
     max-width: 350px;
     padding: 2rem;
@@ -177,7 +177,56 @@ nav{
     align-items: center;
     flex-direction: column;
     gap: 2rem;
-    background-color: rgba(10 , 30, 39, 0.8);
+    background-color: rgba(10, 30, 39, 0.8);
     border-radius: 10px;
+    display: none; /* Ocultar por defecto */
+    z-index: 10; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+
+.nav__links.open {
     display: flex;
+    animation: show-nav 0.3 linear forwards;
+}
+
+.nav__links.close {
+    animation: hide-nav 0.3s linear forwards;
+}
+
+@keyframes show-nav {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes hide-nav {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+.nav__links a{
+    font-weight: 500;
+    color: var(--white);
+}
+
+.nav__links a:hover{
+    color: var(--secondary--color);
+}
+
+.nav__menu__btn {
+    font-size: 1.5rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.nav__action__btn {
+    display: none;
 }
