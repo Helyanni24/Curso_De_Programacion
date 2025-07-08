@@ -1,4 +1,4 @@
-let screen = document.getElementById('screen');
+let screen = document.getElementById('result-display'); // Cambié 'screen' a 'result-display' para que coincida con tu HTML
 
 function insert(value) {
   screen.innerText += value;
@@ -19,9 +19,14 @@ function deleteLast() {
 function calculate() {
   try {
     let expression = screen.innerText
-      .replace(/÷/g, '/')
-      .replace(/×/g, '*')
-      .replace(/\^/g, '**');
+      .replace(/÷/g, '/')   // Reemplaza el símbolo de división
+      .replace(/×/g, '*')   // Reemplaza el símbolo de multiplicación
+      .replace(/^/g, '**') // Reemplaza el símbolo de potencia
+      .replace(/sin(/g, 'Math.sin(') // Reemplaza 'sin' por 'Math.sin'
+      .replace(/cos(/g, 'Math.cos(') // Reemplaza 'cos' por 'Math.cos'
+      .replace(/tan(/g, 'Math.tan(') // Reemplaza 'tan' por 'Math.tan'
+      .replace(/sqrt(/g, 'Math.sqrt('); // Reemplaza 'sqrt' por 'Math.sqrt'
+      
     screen.innerText = eval(expression);
   } catch (error) {
     screen.innerText = 'Error';

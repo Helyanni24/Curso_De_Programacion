@@ -1,31 +1,33 @@
 body {
+  font-family: 'Arial', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f3f3f3;
+  background-color: #e3f2fd;
   height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
 .calculator {
-  background: #222;
+  background-color: #ffffff;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   max-width: 400px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .screen {
-  background: #000;
-  color: #0f0;
-  font-size: 2em;
-  padding: 10px;
-  height: 60px;
+  background-color: #0d47a1;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: bold;
+  padding: 15px;
+  height: 70px;
   text-align: right;
-  margin-bottom: 10px;
-  border-radius: 5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
   overflow-x: auto;
 }
 
@@ -36,26 +38,139 @@ body {
 }
 
 button {
-  padding: 20px;
+  padding: 20px 0;
   font-size: 1.2em;
-  background: #333;
-  color: white;
+  background-color: #bbdefb;
+  color: #000;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button:hover {
-  background: #555;
+  background-color: #90caf9;
 }
 
-@media (max-width: 500px) {
-  .calculator {
-    padding: 10px;
-  }
+button:active {
+  transform: scale(0.95);
+}
 
-  .buttons button {
-    padding: 15px;
-    font-size: 1em;
-  }
+button.number {
+  background-color: #bbdefb;
+}
+
+button.operator {
+  background-color: #1976d2;
+  color: #fff;
+}
+
+button.operator:hover {
+  background-color: #1565c0;
+}
+
+button.scientific {
+  background-color: #4c6faf;
+  color: #fff;
+}
+
+button.scientific:hover {
+  background-color: #647ba7;
+}
+
+button.ac {
+  background-color: #3649f4;
+  color: #fff;
+}
+
+button.ac:hover {
+  background-color: #606cdf;
+}
+
+button.del {
+  background-color: #3649f4;
+  color: #fff;
+}
+
+button.del:hover {
+  background-color: #606cdf;
+}
+
+button.equal {
+  background-color: #2196f3;
+  color: #fff;
+  grid-column: span 2;
+}
+
+button.equal:hover {
+  background-color: #1976d2;
+}
+
+button.number.large {
+  grid-column: span 2;
+}
+
+/* Estilos del historial */
+.history {
+    margin-top: 20px;
+    max-height: 150px; /* Ajusta según sea necesario */
+    overflow-y: auto;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.history h3 {
+    font-size: 1.5em; /* Tamaño del encabezado */
+    margin: 0; /* Sin margen */
+    color: #0d47a1; /* Color del encabezado */
+}
+
+.history ul {
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
+}
+
+.history li {
+    padding: 5px 0; /* Espaciado entre elementos */
+    border-bottom: 1px solid #eee; /* Línea divisoria */
+    color: #333; /* Color del texto del historial */
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .calculator {
+        width: 95%;
+        padding: 15px; 
+        border-radius: 10px; 
+        box-shadow: none; 
+    }
+
+    button {
+        padding: 15px; 
+        font-size: 1.1em; 
+        border-radius: 8px; 
+    }
+
+    .screen {
+        font-size: 2em; 
+        height: auto; 
+        padding: 10px; 
+        margin-bottom: 15px; 
+        border-radius: 8px; 
+        overflow-x: hidden; 
+        white-space: nowrap; 
+        text-overflow: ellipsis; 
+    }
+
+    .history {
+        max-height: 100px; /* Ajustar altura para móviles */
+    }
+
+    .history h3 {
+        font-size: 1.2em; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .history li {
+        font-size: 0.9em; /* Tamaño de fuente más pequeño en móviles */
+    }
 }
