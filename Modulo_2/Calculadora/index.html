@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculadora Científica</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LA CALCULADORA DE HELY</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="calculator">
-        <div class="screen" id="result-display">0</div>
-        <div class="buttons">
-            <button class="ac" data-action="clear">AC</button>
-            <button class="del" data-action="delete">DEL</button>
-            <button class="operator" data-operator="%">%</button>
-            <button class="operator" data-operator="/">÷</button>
+  <div class="theme-toggle">
+    <label>
+      <input type="checkbox" id="toggle-theme"> 🌙 Modo oscuro
+    </label>
+  </div>
 
-            <button class="number">7</button>
-            <button class="number">8</button>
-            <button class="number">9</button>
-            <button class="operator" data-operator="*">×</button>
-
-            <button class="number">4</button>
-            <button class="number">5</button>
-            <button class="number">6</button>
-            <button class="operator" data-operator="-">-</button>
-
-            <button class="number">1</button>
-            <button class="number">2</button>
-            <button class="number">3</button>
-            <button class="operator" data-operator="+">+</button>
-
-            <button class="scientific" data-operator="^">^</button>
-            <button class="scientific" data-operator="cos">cos</button>
-            <button class="scientific" data-operator="tan">tan</button>
-            <button class="scientific" data-operator="sqrt">√</button>
-            <button class="scientific" data-operator="sin">sin</button> <!-- Cambiado de 'sen' a 'sin' -->
-
-            <button class="number large">0</button>
-            <button class="number">.</button>
-            <button class="equal" data-action="calculate">=</button>
-        </div>
+  <div class="calculator">
+    <h1 class="title">LA CALCULADORA DE HELY</h1>
+    <div class="screen" id="result-display">0</div>
+    <div class="mode">
+      <button id="angle-mode">Usar grados</button>
     </div>
-    <script src="script.js"></script>
+    <div class="buttons">
+        <button class="ac" data-action="clear">AC</button>
+        <button class="del" data-action="delete">DEL</button>
+        <button class="operator" data-operator="%">%</button>
+        <button class="operator" data-operator="/">÷</button>
+  
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="operator" data-operator="*">×</button>
+  
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="operator" data-operator="-">-</button>
+  
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="operator" data-operator="+">+</button>
+  
+        <button class="scientific" data-operator="^">^</button>
+        <button class="scientific" data-operator="cos">cos</button>
+        <button class="scientific" data-operator="tan">tan</button>
+        <button class="scientific" data-operator="sqrt">√</button>
+        <button class="scientific" data-operator="sin">sin</button>
+  
+        <button class="number large">0</button>
+        <button class="number">.</button>
+        <button class="equal" data-action="calculate">=</button>
+      </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>

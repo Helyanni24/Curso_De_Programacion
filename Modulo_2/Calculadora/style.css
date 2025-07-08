@@ -1,3 +1,4 @@
+/* Fuentes y fondo */
 body {
   font-family: 'Arial', sans-serif;
   display: flex;
@@ -6,8 +7,15 @@ body {
   background-color: #e3f2fd;
   height: 100vh;
   margin: 0;
+  transition: background-color 0.3s ease;
 }
 
+/* Modo oscuro */
+body.dark {
+  background-color: #121212;
+}
+
+/* Caja principal de la calculadora */
 .calculator {
   background-color: #ffffff;
   padding: 20px;
@@ -16,8 +24,27 @@ body {
   max-width: 400px;
   width: 100%;
   box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body.dark .calculator {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Título principal */
+.title {
+  text-align: center;
+  font-size: 1.8em;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+body.dark .title {
+  color: #90caf9;
+}
+
+/* Pantalla de resultado */
 .screen {
   background-color: #0d47a1;
   color: #fff;
@@ -29,14 +56,24 @@ body {
   margin-bottom: 20px;
   border-radius: 10px;
   overflow-x: auto;
+  transition: all 0.3s ease;
+  animation: pop 0.25s ease;
 }
 
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Contenedor de botones */
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
+/* Botones base */
 button {
   padding: 20px 0;
   font-size: 1.2em;
@@ -56,6 +93,7 @@ button:active {
   transform: scale(0.95);
 }
 
+/* Estilos específicos de botones */
 button.number {
   background-color: #bbdefb;
 }
@@ -78,20 +116,13 @@ button.scientific:hover {
   background-color: #647ba7;
 }
 
-button.ac {
-  background-color: #3649f4;
-  color: #fff;
-}
-
-button.ac:hover {
-  background-color: #606cdf;
-}
-
+button.ac,
 button.del {
   background-color: #3649f4;
   color: #fff;
 }
 
+button.ac:hover,
 button.del:hover {
   background-color: #606cdf;
 }
@@ -110,67 +141,56 @@ button.number.large {
   grid-column: span 2;
 }
 
-/* Estilos del historial */
-.history {
-    margin-top: 20px;
-    max-height: 150px; /* Ajusta según sea necesario */
-    overflow-y: auto;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
+/* Estilos de botón de modo ángulo */
+.mode {
+  text-align: right;
+  margin-bottom: 10px;
 }
 
-.history h3 {
-    font-size: 1.5em; /* Tamaño del encabezado */
-    margin: 0; /* Sin margen */
-    color: #0d47a1; /* Color del encabezado */
+#angle-mode {
+  background-color: #64b5f6;
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.history ul {
-    list-style-type: none; /* Sin viñetas */
-    padding: 0; /* Sin padding */
+/* Estilos para el toggle de tema */
+.theme-toggle {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 0.9em;
+  color: #0d47a1;
 }
 
-.history li {
-    padding: 5px 0; /* Espaciado entre elementos */
-    border-bottom: 1px solid #eee; /* Línea divisoria */
-    color: #333; /* Color del texto del historial */
+body.dark .theme-toggle {
+  color: #90caf9;
 }
 
-/* Responsive */
+/* Adaptabilidad en pantallas pequeñas */
 @media (max-width: 400px) {
-    .calculator {
-        width: 95%;
-        padding: 15px; 
-        border-radius: 10px; 
-        box-shadow: none; 
-    }
+  .calculator {
+    width: 95%;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: none;
+  }
 
-    button {
-        padding: 15px; 
-        font-size: 1.1em; 
-        border-radius: 8px; 
-    }
+  button {
+    padding: 15px;
+    font-size: 1.1em;
+    border-radius: 8px;
+  }
 
-    .screen {
-        font-size: 2em; 
-        height: auto; 
-        padding: 10px; 
-        margin-bottom: 15px; 
-        border-radius: 8px; 
-        overflow-x: hidden; 
-        white-space: nowrap; 
-        text-overflow: ellipsis; 
-    }
-
-    .history {
-        max-height: 100px; /* Ajustar altura para móviles */
-    }
-
-    .history h3 {
-        font-size: 1.2em; /* Tamaño de fuente más pequeño en móviles */
-    }
-
-    .history li {
-        font-size: 0.9em; /* Tamaño de fuente más pequeño en móviles */
-    }
+  .screen {
+    font-size: 2em;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+    overflow-x: auto;
+    text-overflow: ellipsis;
+  }
 }
