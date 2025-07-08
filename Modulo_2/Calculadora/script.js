@@ -1,94 +1,153 @@
-let screen = document.getElementById('result-display');
-let useDegrees = false;
+document.addEventListener('DOMContentLoaded', function() {
+    const display = document.getElementById('result');
+    const buttons = document.querySelectorAll('.btn');
+    const themeToggle = document.getElementById('theme-toggle');
+    let currentInput = '0';
+    let previousInput = '';
+    let operation = null;
+    let resetScreen = false;
 
-// Modo ángulo: Grados vs. Radianes
-document.getElementById('angle-mode').addEventListener('click', () => {
-  useDegrees = !useDegrees;
-  document.getElementById('angle-mode').innerText = useDegrees ? 'Usar radianes' : 'Usar grados';
-});
+    // Toggle del tema oscuro
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+    });
 
-// Modo oscuro
-document.getElementById('toggle-theme').addEventListener('change', (e) => {
-  document.body.classList.toggle('dark', e.target.checked);
-});
-
-// Insertar valor
-function insert(value) {
-  if (screen.innerText === '0' || screen.innerText === 'Error') {
-    screen.innerText = value;
-  } else {
-    screen.innerText += value;
-  }
-}
-
-// Insertar función científica
-function insertFunction(fn) {
-  screen.innerText += fn + '(';
-}
-
-// Limpiar
-function clearScreen() {
-  screen.innerText = '0';
-}
-
-// Borrar último
-function deleteLast() {
-  let current = screen.innerText;
-  screen.innerText = current.length > 1 ? current.slice(0, -1) : '0';
-}
-
-// Evaluar
-function calculate() {
-  try {
-    let expression = screen.innerText
-      .replace(/÷/g, '/')
-      .replace(/×/g, '*')
-      .replace(/\^/g, '**')
-      .replace(/sqrt\(/g, 'Math.sqrt(')
-      .replace(/%/g, '/100');
-
-    if (useDegrees) {
-      expression = expression
-        .replace(/sin\(/g, 'Math.sin(Math.PI/180*')
-        .replace(/cos\(/g, 'Math.cos(Math.PI/180*')
-        .replace(/tan\(/g, 'Math.tan(Math.PI/180*');
-    } else {
-      expression = expression
-        .replace(/sin\(/g, 'Math.sin(')
-        .replace(/cos\(/g, 'Math.cos(')
-        .replace(/tan\(/g, 'Math.tan(');
+    // Actualizar la pantalla
+    function updateDisplay() {
+        display.value = currentInput;
+        // Efecto "pop" al actualizar
+        display.parentElement.style.animation = 'none';
+        void display.parentElement.offsetWidth; // Trigger reflow
+        display.parentElement.style.animation = 'pop 0.25s ease';
     }
 
-    let result = eval(expression);
-    screen.innerText = result !== undefined ? result : 'Error';
-    screen.style.animation = 'pop 0.25s ease';
-    setTimeout(() => screen.style.animation = '', 250);
-  } catch {
-    screen.innerText = 'Error';
-  }
-}
-
-// Eventos
-document.querySelectorAll('button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const action = btn.dataset.action;
-    const operator = btn.dataset.operator;
-    const value = btn.innerText;
-
-    if (action === 'clear') {
-      clearScreen();
-    } else if (action === 'delete') {
-      deleteLast();
-    } else if (action === 'calculate') {
-      calculate();
-    } else if (operator) {
-      if (['sin', 'cos', 'tan', 'sqrt'].includes(operator)) {
-        insertFunction(operator);
-      } else {
-        insert(operator);
-      }
-    } else {
-      insert(value);
+    // Manejar entrada de números
+    function inputNumber(number) {
+        if (currentInput === '0' || resetScreen) {
+            currentInput = number;
+            resetScreen = false;
+        } else {
+            currentInput += number;
+        }
     }
-  });
+
+    // Manejar entrada de punto decimal
+    function inputDecimal() {
+        if (resetScreen) {
+            currentInput = '0.';
+            resetScreen = false;
+            return;
+        }
+        if (!currentInput.includes('.')) {
+            currentInput += '.';
+        }
+    }
+
+    // Manejar operaciones
+    function handleOperation(op) {
+        if (operation !== null && !resetScreen) {
+            calculate();
+        }
+        previousInput = currentInput;
+        operation = op;
+        resetScreen = true;
+    }
+
+    // Calcular resultado
+    function calculate() {
+        let result;
+        const prev = parseFloat(previousInput);
+        const current = parseFloat(currentInput);
+        
+        if (isNaN(prev) || isNaN(current)) return;
+        
+        switch (operation) {
+            case '+':
+                result = prev + current;
+                break;
+            case '-':
+                result = prev - current;
+                break;
+            case '*':
+                result = prev * current;
+                break;
+            case '/':
+                result = current !== 0 ? prev / current : 'Error';
+                break;
+            case '%':
+                result = prev % current;
+                break;
+            default:
+                return;
+            case '^':
+                result = Math.pow(prev, current);
+                break;
+        }
+        
+        currentInput = typeof result === 'number' ? result.toString() : result;
+    operation = null;
+    }
+
+    // Funciones especiales
+    function handleSpecialFunction(func) {
+        const num = parseFloat(currentInput);
+        
+        switch (func) {
+            case 'AC':
+                currentInput = '0';
+                previousInput = '';
+                operation = null;
+                break;
+            case 'DEL':
+                if (currentInput.length === 1 || (currentInput.length === 2 && currentInput.startsWith('-'))) {
+                    currentInput = '0';
+                } else {
+                    currentInput = currentInput.slice(0, -1);
+                }
+                break;
+            case '√':
+                if (num >= 0) {
+                    currentInput = Math.sqrt(num).toString();
+                } else {
+                    currentInput = 'Error';
+                }
+                break;
+            case 'cos':
+                currentInput = Math.cos(num * Math.PI / 180).toString(); // Convertir a radianes
+                break;
+            case 'tan':
+                currentInput = Math.tan(num * Math.PI / 180).toString(); // Convertir a radianes
+                break;
+            case '^':
+                operation = '^';
+                previousInput = currentInput;
+                resetScreen = true;
+                break;
+        }
+    }
+
+    // Event listeners para los botones
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const value = button.getAttribute('data-value');
+            
+            if (button.classList.contains('number') && value !== '.') {
+                inputNumber(value);
+            } else if (value === '.') {
+                inputDecimal();
+            } else if (button.classList.contains('operator') && value !== '=') {
+                handleOperation(value);
+            } else if (button.id === 'equals') {
+                calculate();
+                resetScreen = true;
+            } else if (button.classList.contains('function')) {
+                handleSpecialFunction(value);
+            }
+            
+            updateDisplay();
+        });
+    });
+
+    // Inicializar la pantalla
+    updateDisplay();
 });
