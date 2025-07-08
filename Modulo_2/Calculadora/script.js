@@ -7,21 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     let operation = null;
     let resetScreen = false;
 
-    // Toggle del tema oscuro
+    // pa que se ponga oscurito
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark');
     });
 
-    // Actualizar la pantalla
+    // actualizar
     function updateDisplay() {
         display.value = currentInput;
-        // Efecto "pop" al actualizar
         display.parentElement.style.animation = 'none';
-        void display.parentElement.offsetWidth; // Trigger reflow
+        void display.parentElement.offsetWidth;
         display.parentElement.style.animation = 'pop 0.25s ease';
     }
 
-    // Manejar entrada de números
+    // entrada de números
     function inputNumber(number) {
         if (currentInput === '0' || resetScreen) {
             currentInput = number;
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Manejar entrada de punto decimal
+    // entrada de punto decimal
     function inputDecimal() {
         if (resetScreen) {
             currentInput = '0.';
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Manejar operaciones
+    // operaciones
     function handleOperation(op) {
         if (operation !== null && !resetScreen) {
             calculate();
@@ -53,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         resetScreen = true;
     }
 
-    // Calcular resultado
+    // resultado
     function calculate() {
         let result;
         const prev = parseFloat(previousInput);
@@ -126,7 +125,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Event listeners para los botones
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const value = button.getAttribute('data-value');
@@ -148,6 +146,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Inicializar la pantalla
+    // Inicializar
     updateDisplay();
 });
