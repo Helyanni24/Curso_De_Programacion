@@ -1,0 +1,197 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600;700;800&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colors ==========*/
+  --hue: 271;
+  --first-color: hsl(var(--hue), 76%, 53%);
+  --title-color: hsl(var(--hue), 4%, 26%);
+  --text-color: hsl(var(--hue), 4%, 38%);
+  --body-color: hsl(var(--hue), 4%, 99%);
+  --container-color: hsl(var(--hue), 4%, 95%);
+  --border-color: hsl(var(--hue), 4%, 91%);
+  --white-color: hsl(var(--hue), 4%, 100%);
+
+  /*========== Font family ==========*/
+  --body-font: 'Montserrat Alternates', sans-serif;
+
+  /*========== Font sizes ==========*/
+  --h1-font-size: 3.5rem;
+  --h2-font-size: 3rem;
+  --h3-font-size: 1.5rem;
+  --large-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+
+  /*========== Font weight ==========*/
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+  --weight-800: 800;
+}
+
+/* Responsive typography */
+@media screen and (max-width: 1208px) {
+}
+
+/*=============== BASE ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: thin;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--weight-500);
+}
+
+body {
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-color);
+  font-weight: var(--weight-800);
+}
+
+p {
+  line-height: 1.75;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/*=============== Variables Dark theme ===============*/
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+
+/*=============== LAYOUT ===============*/
+.grid{
+  display: grid;
+}
+/*=============== NAVBAR ===============*/
+.nav{
+  position: fixed;
+  inset-block: 0;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-list {
+  row-gap: 1.25rem;
+}
+
+.nav-link {
+  background-color: var(--container-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+
+.nav-icon {
+  color: var(--title-color);
+  font-size: 1.5rem;
+
+}
+
+.nav-name {
+  position: absolute;
+  top: 0;
+  right: 0rem;
+  background-color: var(--first-color);
+  height: 100%;
+  padding-inline: 1.75rem 2.75rem;
+  border-radius: 1.5rem;
+  display: flex;
+  align-items: center;
+  color: var(--small-font-size);
+  font-weight: var(--weight-600);
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+  transition: opacity 0.3s, visibility 0.3s, right 0.3s;
+}
+
+.nav-link:hover .nav-name {
+  opacity: 1;
+  visibility: visible;
+  right: 0.5rem;
+  right: 0.5rem;
+}
+
+.nav-close,
+.nav-toggle {
+  display: none;
+}
+/*=============== HOME ===============*/
+
+/*=============== ABOUT ===============*/
+
+/*========== Skills ==========*/
+
+/*========== Resume ==========*/
+
+/*=============== PORTFOLIO ===============*/
+
+/*=============== CONTACT ===============*/
+
+/*=============== STYLE SWITCHER ===============*/
+
+/*=============== BREAKPOINTS ===============*/
+/* For large devices */
+@media screen and (max-width: 1400px) {
+}
+
+@media screen and (max-width: 1208px) {
+}
+
+/* For medium devices */
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* For small devices */
+@media screen and (max-width: 540px) {
+}
+
+@media screen and (max-width: 420px) {
+}
