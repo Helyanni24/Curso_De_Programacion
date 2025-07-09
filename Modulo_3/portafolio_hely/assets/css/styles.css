@@ -123,12 +123,23 @@ img {
   display: grid;
   place-items: center;
   position: relative;
+  transition: background 0.3s;
+}
+
+.nav-link:hover,
+.active-link {
+  background-color: var(--first-color);
 }
 
 .nav-icon {
   color: var(--title-color);
   font-size: 1.5rem;
+  transition: color 0.3s;
+}
 
+.nav-link:hover, .nav-icon,
+.active-link .nav-icon {
+  color: var(--white-color);
 }
 
 .nav-name {
@@ -161,6 +172,46 @@ img {
   display: none;
 }
 /*=============== HOME ===============*/
+.home-container {
+  grid-template-columns: 4.75fr 7.25fr;
+  align-items: center;
+  column-gap: 10rem;
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+.home-img {
+  height: calc(100vh - 5rem);
+  width: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
+}
+
+.home-title {
+  font-size: var(--h1-font-size);
+  padding-left: 4.25rem;
+  position: relative;
+}
+
+.home-title span {
+  color: var(--first-color);
+}
+
+.home-title::before {
+  content: '';
+  position: absolute;
+  top: 22%;
+  left: 0;
+  width: 40px;
+  height: 4px;
+  border-radius: 0.5rem;
+  background-color: var(--first-color);
+}
+
+.home-description {
+  max-width: 600px;
+  margin-block: 1.5rem 2.5rem;
+}
 
 /*=============== ABOUT ===============*/
 
