@@ -140,9 +140,28 @@ img {
   place-items: center;
 }
 
+.section{
+  padding-block: 4rem;
+}
+
+.section-title {
+  font-size: var(--h1-font-size);
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.section-title span {
+  color: var(--first-color);
+}
 /*=============== LAYOUT ===============*/
 .grid{
   display: grid;
+}
+
+.container {
+  max-width: 1288px;
+  margin-inline: auto;
+  padding-inline: 1.25;
 }
 /*=============== NAVBAR ===============*/
 .nav{
@@ -159,7 +178,7 @@ img {
 }
 
 .nav-link {
-  background-color: var(--container-color);
+  background-color: var(--border-color);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -270,8 +289,37 @@ img {
 }
 /*=============== ABOUT ===============*/
 
+.about-container,
+.info-list,
+.stats {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: start;
+  gap: 1.75rem;
+  padding-left: 2rem;
+}
 
+.section-subtitle {
+  font-size: var(--h3-font-size);
+  font-weight: var(--weight-700);
+  margin-bottom: 3rem;
+}
 
+.info-list {
+  row-gap: 2.25rem;
+  margin-bottom: 4.25rem;
+  padding-left: 4rem;
+}
+
+.info-title,
+.info-description {
+  color: var(--title-color);
+}
+
+.stats-box {
+  border: 1px solid var(--border-color);
+  padding: 1.25rem 2rem 1.5rem;
+  border-radius: 0.5;
+}
 
 /*========== Skills ==========*/
 
