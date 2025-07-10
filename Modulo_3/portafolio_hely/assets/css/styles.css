@@ -96,7 +96,12 @@ img {
 /*=============== Variables Dark theme ===============*/
 
 /*=============== REUSABLE CSS CLASSES ===============*/
-
+.button{
+  display: inline-block;
+  color: var(--title-color);
+  border: 1px solid var(--first-color);
+  padding: 1.25 4.5rem 1.25rem 2rem;
+}
 /*=============== LAYOUT ===============*/
 .grid{
   display: grid;

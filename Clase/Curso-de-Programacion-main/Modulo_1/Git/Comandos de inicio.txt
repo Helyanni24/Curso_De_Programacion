@@ -1,4 +1,4 @@
 Git Clone (Aqui colocar el link del repositorio)
 
 git config user.name "Helyanni24"
-git config user.email "helyannir@gmail.com"
+
