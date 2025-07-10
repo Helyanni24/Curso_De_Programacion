@@ -1,115 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Portfolio Website</title>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-menu">
+      <ul class="nav-lis grid">
+        <li class="nav-item">
+          <a href="index.html" class="nav-link">
+            <i class="ri-home-8-line nav-icon"></i>
+            <h3 class="nav-name">Inicio</h3>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="about.html" class="nav-link">
+            <i class="ri-user-3-line nav-icon"></i>
+            <h3 class="nav-name">Acerca de Mi</h3>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="portfolio.html" class="nav-link active-link">
+            <i class="ri-folder-open-line nav-icon"></i>
+            <h3 class="nav-name">Portafolio</h3>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="contac.html" class="nav-link">
+            <i class="ri-mail-open-line nav-icon"></i>
+            <h3 class="nav-name">Contactame</h3>
+          </a>
+        </li>
+      </ul>
+      <i class="ri-close-line nav-close"></i>
+    </div>
+    <div class="nav-toggle">
+      <i class="ri-menu-fold-line"></i>
+    </div>
+  </nav>
 
-    <!--=============== REMIXICON ===============-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
-
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css" />
-
-    <title>Portfolio Website Lucy</title>
-  </head>
-  <body>
-    <!--=============== NAVBAR ===============-->
-    <nav class="nav">
-      <div class="nav-menu">
-        <ul class="nav-lis grid">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">
-              <i class="ri-home-8-line nav-icon"></i>
-              <h3 class="nav-name">Inicio</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="about.html" class="nav-link<nav class="nav">
-      <div class="nav-menu">
-        <ul class="nav-lis grid">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link">
-              <i class="ri-home-8-line nav-icon"></i>
-              <h3 class="nav-name">Inicio</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="about.html" class="nav-link">
-              <i class="ri-user-3-line nav-icon"></i>
-              <h3 class="nav-name">Acerca de Mi</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="portfolio.html" class="nav-link">
-              <i class="ri-folder-open-line nav-icon"></i>
-              <h3 class="nav-name">Portafolio</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link active-link">
-              <i class="ri-mail-open-line nav-icon"></i>
-              <h3 class="nav-name">Contactame</h3>
-            </a>
-          </li>
-        </ul>
-    
-        <i class="ri-close-line nav-close"></i>
+  <section class="contact section" id="contact">
+    <h2 class="section__title">Contáctame</h2>
+    <span class="section__subtitle">¿Tienes algún proyecto o pregunta?</span>
+    <form action="" class="contact__form" id="contact-form">
+      <div class="contact__inputs">
+        <input type="text" name="user_name" placeholder="Tu nombre" class="contact__input" required />
+        <input type="email" name="user_email" placeholder="Tu correo" class="contact__input" required />
       </div>
-    
-      <div class="nav-toggle">
-        <i class="ri-menu-fold-line"></i>
-      </div>
-    </nav>">
-              <i class="ri-user-3-line nav-icon"></i>
-              <h3 class="nav-name">Acerca de Mi</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="portfolio.html" class="nav-link">
-              <i class="ri-folder-open-line nav-icon"></i>
-              <h3 class="nav-name">Portafolio</h3>
-            </a>
-          </li>
-    
-          <li class="nav-item">
-            <a href="contact.html" class="nav-link">
-              <i class="ri-mail-open-line nav-icon"></i>
-              <h3 class="nav-name">Contactame</h3>
-            </a>
-          </li>
-        </ul>
-    
-        <i class="ri-close-line nav-close"></i>
-      </div>
-    
-      <div class="nav-toggle">
-        <i class="ri-menu-fold-line"></i>
-      </div>
-    </nav>
-    <!--=============== MAIN ===============-->
+      <textarea name="message" placeholder="Tu mensaje" class="contact__input contact__textarea" required></textarea>
+      <button type="submit" class="button button--flex">
+        Enviar Mensaje
+        <i class="ri-send-plane-line button__icon"></i>
+      </button>
+      <p class="contact__message" id="contact-message"></p>
+    </form>
+  </section>
 
-    <!--=============== CONTACT ===============-->
-
-    <!--=============== STYLE SWITCHER ===============-->
-
-    <!--=============== EMAIL JS ===============-->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
-    ></script>
-
-    <!--=============== MAIN JS ===============-->
-    <script src="assets/js/main.js"></script>
-
-    <!--=============== CONTACT JS ===============-->
-    <script src="assets/js/contact.js"></script>
-  </body>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/contact.js"></script>
+</body>
 </html>

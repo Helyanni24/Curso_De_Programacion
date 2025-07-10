@@ -1,13 +1,25 @@
-/*==================== MENU SHOW Y HIDDEN ====================*/
+// Mostrar y ocultar menú
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const navClose = document.querySelector('.nav-close');
 
-/*===== MENU SHOW =====*/
-/* Validate if constant exists */
+if (navToggle) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.add('show-menu');
+  });
+}
 
-/*===== MENU HIDDEN =====*/
-/* Validate if constant exists */
+if (navClose) {
+  navClose.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+  });
+}
 
-/*==================== STYLE SWITCHER ====================*/
+// Quitar menú al hacer clic en un link
+const navLinks = document.querySelectorAll('.nav-link');
 
-/*==================== DARK LIGHT THEME ====================*/
-
-/*==================== COLORS ====================*/
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('show-menu');
+  });
+});
